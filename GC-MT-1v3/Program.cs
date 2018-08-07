@@ -279,9 +279,26 @@ namespace GC_MT_1
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            StreamReader menu = new StreamReader("../../Menu.txt");
+            Form1 f = new Form1();
+            f.Text = menu.ReadLine();
+            Product[] MENU = ArrayBuilder2(ArrayBuilder1(menu));
+            menu.Close();
+            f.SetMenu(MENU);
+            f.ShowDialog();                        
+            
+
+            
+
+            //double price = 0;
+            //int[] receipt = OrderList(MENU);
+            //for (int i = 0; i < MENU.Length; i++)
+            //{
+            //    price += receipt[i] * MENU[i].FoodPrice;
+            //}
+            
+            
         }
     }
 }

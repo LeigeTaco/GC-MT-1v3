@@ -7,84 +7,113 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace GC_MT_1
 {
     public partial class Form1 : Form
     {
 
-    //    Form1 f = new Form1();
-
-    //    f.ShowDialog(); 
-
-
-    //        StreamReader menu = new StreamReader("../../Menu.txt");
-    //    string RESTAURANTNAME = menu.ReadLine();
-    //    Product[] MENU = ArrayBuilder2(ArrayBuilder1(menu));
-
-    //    Application.EnableVisualStyles();
-    //        Application.SetCompatibleTextRenderingDefault(false);
-    //        Application.Run(new Form1());
-
-    //        double price = 0;
-    //    int[] receipt = OrderList(MENU);
-    //        for (int i = 0; i<MENU.Length; i++)
-    //        {
-    //            price += receipt[i] * MENU[i].FoodPrice;
-    //        }
-
-    //PrintReceipt(receipt, MENU);
-    ////PaymentMethod.Cash(price * 1.06);
-    //GetPayment(price* 1.06);
-
     public Form1()
         {
             InitializeComponent();
         }
 
+        public void SetMenu(Product[] menu)     //Initializer Sorta Thing
+        {
+            MenuList = menu;
+            Receipt = new int[menu.Length];
+            printMenu.View = View.Details;
+            printReceipt.View = View.Details;
+            printMenu.Columns.Add("Menu Number");
+            printMenu.Columns.Add("Category");
+            printMenu.Columns.Add("Item Name", 150);
+            printMenu.Columns.Add("Price");
+            printReceipt.Columns.Add("Quantity");
+            printReceipt.Columns.Add("Item", 150);
+            printReceipt.Columns.Add("Unit Total");
+            displayDesc.Text = "";
+            displayName.Text = "";
+            cost.Text = "";
+            subtotal.Text = "";
+            total.Text = "";
+            orderQuantity.Minimum = 0;
+            orderQuantity.Maximum = 99;
+            int counter = 1;
+            foreach (Product f in menu)
+            {
+                ListViewItem temp1 = new ListViewItem (new[] { $"{counter}", f.FoodCategory, f.FoodName, $"{f.FoodPrice:c}" });
+                printMenu.Items.Add(temp1);
+                menuSelect.Items.Add($"{f.FoodName} {f.FoodPrice:c}");
+                counter++;
+            }
+
+        }
+        
+        public int Index { set; get; }
+        public int Quantity { set; get; }
+        public double Price { set; get; }
+        public Product[] MenuList { set; get; }
+        public int[] Receipt { set; get; }
+
+        private void menuSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Index = menuSelect.SelectedIndex;
+            Price = MenuList[Index].FoodPrice;
+            cost.Text = $"{Price * Quantity:c}";
+            displayDesc.Text = MenuList[Index].FoodDescription;
+            displayName.Text = MenuList[Index].FoodName;
+        }
+
+        private void orderQuantity_ValueChanged(object sender, EventArgs e)
+        {
+            Quantity = Convert.ToInt32(orderQuantity.Value);
+            cost.Text = $"{Price * Quantity:c}";
+        }
+
+        private void displayName_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void addButton_Click(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "" || textBox2.Text == "")
+            printReceipt.Items.Clear();
+            Receipt[Index] = Quantity;
+            for (int i = 0; i < Receipt.Length; i++)
             {
-                MessageBox.Show("Please provide input!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                if (Receipt[i] > 0)
+                {
+                    ListViewItem temp = new ListViewItem(new[] {$"{Receipt[i]}", MenuList[i].FoodName, $"{Receipt[i] * MenuList[i].FoodPrice:c}"});
+                    printReceipt.Items.Add(temp);
+                }
             }
 
-            int n1 = int.Parse(textBox1.Text);
-            int n2 = int.Parse(textBox2.Text);
+            double subTotal = 0;
+            for (int i = 0; i < Receipt.Length; i++)
+            {
 
-            int r = n1 + n2;
+                if (Receipt[i] > 0)
+                {
 
-            label1.Text = r.ToString();
+                    Console.WriteLine($"{Receipt[i]} {MenuList[i].FoodName} {Receipt[i] * MenuList[i].FoodPrice:c}");
+                    subTotal += Receipt[i] * MenuList[i].FoodPrice;
 
-            MessageBox.Show(r.ToString(),"Result", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            subtotal.Text = $"Subtotal: {subTotal:c}";
+            total.Text = $"Total: {subTotal * 1.06:c}";
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            label2.Text = comboBox1.Text; 
+
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void printReceipt_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox2.Text == "Credit Card")
-            {
-                panel1.Show();
-            }
-            else
-            {
-                panel1.Hide();
-            }
+
         }
     }
 }

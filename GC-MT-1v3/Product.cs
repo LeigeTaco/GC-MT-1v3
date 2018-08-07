@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace GC_MT_1
 {
-    class Product
+    public class Product
 
     {
         //fields to represent data

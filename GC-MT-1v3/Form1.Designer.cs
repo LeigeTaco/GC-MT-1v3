@@ -28,174 +28,161 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.addButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.menuSelect = new System.Windows.Forms.ComboBox();
+            this.orderQuantity = new System.Windows.Forms.NumericUpDown();
+            this.printMenu = new System.Windows.Forms.ListView();
+            this.displayName = new System.Windows.Forms.Label();
+            this.displayDesc = new System.Windows.Forms.Label();
+            this.cost = new System.Windows.Forms.Label();
+            this.printReceipt = new System.Windows.Forms.ListView();
+            this.Purchase = new System.Windows.Forms.Button();
+            this.Checkout = new System.Windows.Forms.Button();
+            this.subtotal = new System.Windows.Forms.Label();
+            this.total = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.orderQuantity)).BeginInit();
             this.SuspendLayout();
             // 
-            // listBox1
+            // menuSelect
             // 
-            this.listBox1.AllowDrop = true;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 79);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(123, 199);
-            this.listBox1.TabIndex = 0;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.menuSelect.FormattingEnabled = true;
+            this.menuSelect.Location = new System.Drawing.Point(348, 75);
+            this.menuSelect.Name = "menuSelect";
+            this.menuSelect.Size = new System.Drawing.Size(165, 21);
+            this.menuSelect.TabIndex = 1;
+            this.menuSelect.SelectedIndexChanged += new System.EventHandler(this.menuSelect_SelectedIndexChanged);
             // 
-            // addButton
+            // orderQuantity
             // 
-            this.addButton.Location = new System.Drawing.Point(246, 55);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(75, 23);
-            this.addButton.TabIndex = 1;
-            this.addButton.Text = "Add";
-            this.addButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            this.orderQuantity.Location = new System.Drawing.Point(519, 75);
+            this.orderQuantity.Name = "orderQuantity";
+            this.orderQuantity.Size = new System.Drawing.Size(40, 20);
+            this.orderQuantity.TabIndex = 3;
+            this.orderQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.orderQuantity.ValueChanged += new System.EventHandler(this.orderQuantity_ValueChanged);
             // 
-            // label1
+            // printMenu
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(360, 118);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
+            this.printMenu.Location = new System.Drawing.Point(13, 13);
+            this.printMenu.Name = "printMenu";
+            this.printMenu.Size = new System.Drawing.Size(329, 425);
+            this.printMenu.TabIndex = 4;
+            this.printMenu.UseCompatibleStateImageBehavior = false;
             // 
-            // pictureBox1
+            // displayName
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(624, 32);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(135, 99);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.displayName.AutoSize = true;
+            this.displayName.Location = new System.Drawing.Point(348, 111);
+            this.displayName.Name = "displayName";
+            this.displayName.Size = new System.Drawing.Size(35, 13);
+            this.displayName.TabIndex = 5;
+            this.displayName.Text = "label1";
+            this.displayName.Click += new System.EventHandler(this.displayName_Click);
             // 
-            // textBox1
+            // displayDesc
             // 
-            this.textBox1.Location = new System.Drawing.Point(346, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.displayDesc.AutoSize = true;
+            this.displayDesc.Location = new System.Drawing.Point(348, 136);
+            this.displayDesc.Name = "displayDesc";
+            this.displayDesc.Size = new System.Drawing.Size(35, 13);
+            this.displayDesc.TabIndex = 7;
+            this.displayDesc.Text = "label3";
             // 
-            // textBox2
+            // cost
             // 
-            this.textBox2.Location = new System.Drawing.Point(346, 79);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 5;
+            this.cost.AutoSize = true;
+            this.cost.Location = new System.Drawing.Point(565, 78);
+            this.cost.Name = "cost";
+            this.cost.Size = new System.Drawing.Size(35, 13);
+            this.cost.TabIndex = 8;
+            this.cost.Text = "label1";
             // 
-            // comboBox1
+            // printReceipt
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Water",
-            "Coke",
-            "Chips"});
-            this.comboBox1.Location = new System.Drawing.Point(214, 173);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 6;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.printReceipt.Location = new System.Drawing.Point(348, 204);
+            this.printReceipt.Name = "printReceipt";
+            this.printReceipt.Size = new System.Drawing.Size(276, 181);
+            this.printReceipt.TabIndex = 9;
+            this.printReceipt.UseCompatibleStateImageBehavior = false;
+            this.printReceipt.SelectedIndexChanged += new System.EventHandler(this.printReceipt_SelectedIndexChanged);
             // 
-            // label2
+            // Purchase
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(226, 227);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "label2";
+            this.Purchase.Location = new System.Drawing.Point(607, 75);
+            this.Purchase.Name = "Purchase";
+            this.Purchase.Size = new System.Drawing.Size(75, 23);
+            this.Purchase.TabIndex = 10;
+            this.Purchase.Text = "Purchase";
+            this.Purchase.UseVisualStyleBackColor = true;
+            this.Purchase.Click += new System.EventHandler(this.button1_Click);
             // 
-            // panel1
+            // Checkout
             // 
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(506, 193);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 8;
-            this.panel1.Visible = false;
+            this.Checkout.Location = new System.Drawing.Point(630, 204);
+            this.Checkout.Name = "Checkout";
+            this.Checkout.Size = new System.Drawing.Size(75, 23);
+            this.Checkout.TabIndex = 11;
+            this.Checkout.Text = "button2";
+            this.Checkout.UseVisualStyleBackColor = true;
+            this.Checkout.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // subtotal
             // 
-            this.button1.Location = new System.Drawing.Point(39, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.subtotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.subtotal.AutoSize = true;
+            this.subtotal.Location = new System.Drawing.Point(588, 392);
+            this.subtotal.Name = "subtotal";
+            this.subtotal.Size = new System.Drawing.Size(35, 13);
+            this.subtotal.TabIndex = 12;
+            this.subtotal.Text = "label1";
+            this.subtotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox3
+            // total
             // 
-            this.textBox3.Location = new System.Drawing.Point(39, 45);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 1;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Cash",
-            "Check",
-            "Credit Card"});
-            this.comboBox2.Location = new System.Drawing.Point(506, 150);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 9;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.total.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.total.AutoSize = true;
+            this.total.Location = new System.Drawing.Point(587, 409);
+            this.total.Name = "total";
+            this.total.Size = new System.Drawing.Size(35, 13);
+            this.total.TabIndex = 13;
+            this.total.Text = "label2";
+            this.total.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.addButton);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.total);
+            this.Controls.Add(this.subtotal);
+            this.Controls.Add(this.Checkout);
+            this.Controls.Add(this.Purchase);
+            this.Controls.Add(this.printReceipt);
+            this.Controls.Add(this.cost);
+            this.Controls.Add(this.displayDesc);
+            this.Controls.Add(this.displayName);
+            this.Controls.Add(this.printMenu);
+            this.Controls.Add(this.orderQuantity);
+            this.Controls.Add(this.menuSelect);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.orderQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox menuSelect;
+        private System.Windows.Forms.NumericUpDown orderQuantity;
+        private System.Windows.Forms.ListView printMenu;
+        private System.Windows.Forms.Label displayName;
+        private System.Windows.Forms.Label displayDesc;
+        private System.Windows.Forms.Label cost;
+        private System.Windows.Forms.ListView printReceipt;
+        private System.Windows.Forms.Button Purchase;
+        private System.Windows.Forms.Button Checkout;
+        private System.Windows.Forms.Label subtotal;
+        private System.Windows.Forms.Label total;
     }
 }
 
