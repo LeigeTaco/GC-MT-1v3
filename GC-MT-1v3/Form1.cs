@@ -55,6 +55,7 @@ namespace GC_MT_1
         public double Price { set; get; }
         public Product[] MenuList { set; get; }
         public int[] Receipt { set; get; }
+        private double CheckoutPrice { set; get; }
 
         private void menuSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -79,7 +80,7 @@ namespace GC_MT_1
         private void button1_Click(object sender, EventArgs e)
         {
             printReceipt.Items.Clear();
-            Receipt[Index] = Quantity;
+            Receipt[Index] += Quantity;
             for (int i = 0; i < Receipt.Length; i++)
             {
                 if (Receipt[i] > 0)
@@ -103,12 +104,14 @@ namespace GC_MT_1
 
             }
             subtotal.Text = $"Subtotal: {subTotal:c}";
-            total.Text = $"Total: {subTotal * 1.06:c}";
+            CheckoutPrice = subTotal * 1.06;
+            total.Text = $"Total: {CheckoutPrice:c}";
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Payment p = new Payment(CheckoutPrice);
+            p.ShowDialog();
         }
 
         private void printReceipt_SelectedIndexChanged(object sender, EventArgs e)

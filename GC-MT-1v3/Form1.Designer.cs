@@ -36,7 +36,7 @@
             this.cost = new System.Windows.Forms.Label();
             this.printReceipt = new System.Windows.Forms.ListView();
             this.Purchase = new System.Windows.Forms.Button();
-            this.Checkout = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.subtotal = new System.Windows.Forms.Label();
             this.total = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.orderQuantity)).BeginInit();
@@ -45,15 +45,15 @@
             // menuSelect
             // 
             this.menuSelect.FormattingEnabled = true;
-            this.menuSelect.Location = new System.Drawing.Point(348, 75);
+            this.menuSelect.Location = new System.Drawing.Point(351, 75);
             this.menuSelect.Name = "menuSelect";
-            this.menuSelect.Size = new System.Drawing.Size(165, 21);
+            this.menuSelect.Size = new System.Drawing.Size(186, 21);
             this.menuSelect.TabIndex = 1;
             this.menuSelect.SelectedIndexChanged += new System.EventHandler(this.menuSelect_SelectedIndexChanged);
             // 
             // orderQuantity
             // 
-            this.orderQuantity.Location = new System.Drawing.Point(519, 75);
+            this.orderQuantity.Location = new System.Drawing.Point(543, 75);
             this.orderQuantity.Name = "orderQuantity";
             this.orderQuantity.Size = new System.Drawing.Size(40, 20);
             this.orderQuantity.TabIndex = 3;
@@ -90,7 +90,7 @@
             // cost
             // 
             this.cost.AutoSize = true;
-            this.cost.Location = new System.Drawing.Point(565, 78);
+            this.cost.Location = new System.Drawing.Point(589, 78);
             this.cost.Name = "cost";
             this.cost.Size = new System.Drawing.Size(35, 13);
             this.cost.TabIndex = 8;
@@ -107,7 +107,7 @@
             // 
             // Purchase
             // 
-            this.Purchase.Location = new System.Drawing.Point(607, 75);
+            this.Purchase.Location = new System.Drawing.Point(630, 75);
             this.Purchase.Name = "Purchase";
             this.Purchase.Size = new System.Drawing.Size(75, 23);
             this.Purchase.TabIndex = 10;
@@ -115,37 +115,36 @@
             this.Purchase.UseVisualStyleBackColor = true;
             this.Purchase.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Checkout
+            // button2
             // 
-            this.Checkout.Location = new System.Drawing.Point(630, 204);
-            this.Checkout.Name = "Checkout";
-            this.Checkout.Size = new System.Drawing.Size(75, 23);
-            this.Checkout.TabIndex = 11;
-            this.Checkout.Text = "button2";
-            this.Checkout.UseVisualStyleBackColor = true;
-            this.Checkout.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Location = new System.Drawing.Point(630, 204);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Checkout";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // subtotal
             // 
             this.subtotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.subtotal.AutoSize = true;
-            this.subtotal.Location = new System.Drawing.Point(588, 392);
+            this.subtotal.Location = new System.Drawing.Point(524, 388);
+            this.subtotal.MaximumSize = new System.Drawing.Size(1000, 100);
             this.subtotal.Name = "subtotal";
-            this.subtotal.Size = new System.Drawing.Size(35, 13);
+            this.subtotal.Size = new System.Drawing.Size(100, 13);
             this.subtotal.TabIndex = 12;
             this.subtotal.Text = "label1";
-            this.subtotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.subtotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // total
             // 
             this.total.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.total.AutoSize = true;
-            this.total.Location = new System.Drawing.Point(587, 409);
+            this.total.Location = new System.Drawing.Point(524, 401);
             this.total.Name = "total";
-            this.total.Size = new System.Drawing.Size(35, 13);
+            this.total.Size = new System.Drawing.Size(100, 23);
             this.total.TabIndex = 13;
             this.total.Text = "label2";
-            this.total.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.total.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Form1
             // 
@@ -154,7 +153,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.total);
             this.Controls.Add(this.subtotal);
-            this.Controls.Add(this.Checkout);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.Purchase);
             this.Controls.Add(this.printReceipt);
             this.Controls.Add(this.cost);
@@ -180,7 +179,7 @@
         private System.Windows.Forms.Label cost;
         private System.Windows.Forms.ListView printReceipt;
         private System.Windows.Forms.Button Purchase;
-        private System.Windows.Forms.Button Checkout;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label subtotal;
         private System.Windows.Forms.Label total;
     }
