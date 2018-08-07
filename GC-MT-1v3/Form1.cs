@@ -16,5 +16,10 @@ namespace GC_MT_1v3
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
