@@ -54,6 +54,11 @@
             // orderQuantity
             // 
             this.orderQuantity.Location = new System.Drawing.Point(543, 75);
+            this.orderQuantity.Maximum = new decimal(new int[] {
+            1215752192,
+            23,
+            0,
+            0});
             this.orderQuantity.Name = "orderQuantity";
             this.orderQuantity.Size = new System.Drawing.Size(40, 20);
             this.orderQuantity.TabIndex = 3;
